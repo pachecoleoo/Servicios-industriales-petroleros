@@ -6,14 +6,14 @@ export default function IntroThreeColumns() {
         "Procesos trazables y cumplimiento normativo para garantizar precisión en cada instrumento.",
     },
     {
-      title: "Operación en campo",
+      title: "Compromiso",
       text:
         "Equipos y protocolos listos para condiciones exigentes en la industria energética.",
     },
     {
-      title: "Soporte y seguimiento",
+      title: "Soporte",
       text:
-        "Reportes claros, tiempos comprometidos y asistencia técnica post-servicio.",
+        "Reportes claros, tiempos comprometidos y asistencia técnica.",
     },
   ];
 
@@ -30,11 +30,9 @@ export default function IntroThreeColumns() {
             Precisión, eficiencia y soporte real
           </h2>
           <p className="mt-3 text-gray-600">
-            Un bloque claro para explicar la propuesta de valor en tres puntos.
-            Ideal para el primer pliegue del inicio.
+            La calibración de detectores de gas es esencial para garantizar la seguridad de tu entorno y la precisión de las mediciones.
           </p>
         </div>
-
         {/* Grid de 3 columnas */}
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {items.map((item, i) => (

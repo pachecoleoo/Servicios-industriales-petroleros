@@ -1,33 +1,24 @@
-// src/pages/Home.jsx
-import Header from '../components/Header';
+// import Header from '../components/Header';
 import CarouselLanding from '../components/Carousel';
 import IntroThreeColumns from '../components/IntroThreeColumns';
 import ObjectiveSection from '../components/ObjectiveSection';
-import Footer from '../components/Footer';
-import ContactForm from "../components/ContactForm";
-
+import IconosSection from '../components/IconosSection';
 
 function Home() {
   return (
     <div>
       <header>
-    <Header />
     <CarouselLanding />
       </header>
 
     <main className="p-0">         
       <ObjectiveSection/>
-
+      <IconosSection/>
       <IntroThreeColumns/>
-    </main>
+    
 
-    <div>
-      {/* ... otras secciones ... */}
-      <ContactForm />
-    </div>
-    <footer>
-    <Footer/>
-    </footer>
+    
+    </main>
     </div>
   );
 }

@@ -19,9 +19,9 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contacto" className="bg-gray-50 py-16">
+    <section id="contacto">
       <div className="mx-auto max-w-3xl px-6">
-        <div className="text-center mb-10">
+        <div className="text-left mb-10">
           <h2 className="text-3xl font-extrabold text-gray-900">Contáctanos</h2>
           <p className="mt-2 text-gray-600">
             Dejanos tu consulta y nos pondremos en contacto lo antes posible.

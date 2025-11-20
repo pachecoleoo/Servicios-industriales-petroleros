@@ -5,7 +5,7 @@ import { Target } from "lucide-react";
  function ObjectiveSection() {
   return (
     <section id="objetivo" className="bg-white">
-      <div className="mx-auto max-w-7xl px-6 py-16 grid gap-10 md:grid-cols-2 items-center">
+      <div className="mx-auto max-w-7xl px-6 py-9 grid gap-10 md:grid-cols-2 items-center">
         {/* Bloque de texto */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -27,24 +27,24 @@ import { Target } from "lucide-react";
             >
               <Target className="h-5 w-5" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
-              Nuestro objetivo
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              Nuestro servicio
             </h2>
           </div>
 
-          <p className="mt-5 text-gray-600 leading-relaxed">
+          <p className="mt-5 text-base text-gray-900 leading-relaxed">
             Asegurar precisión, trazabilidad y eficiencia en cada intervención.
             Integramos tecnología, método y experiencia para que tus operaciones
-            trabajen con datos confiables y riesgos controlados.
+            trabajen con equipos confiables.
           </p>
-          <p className="mt-4 text-gray-600 leading-relaxed">
-            Desde el laboratorio a campo, nuestro enfoque es simple: cumplir
+          <p className="mt-4 text-base text-gray-900 leading-relaxed">
+            Nuestro enfoque es simple: cumplir
             normas, optimizar tiempos y acompañarte con soporte técnico claro.
           </p>
 
           <div className="mt-6">
             <a
-              href="#contacto"
+              href="../servicios"
               className="inline-flex items-center rounded-lg px-4 py-2 text-white shadow-sm"
               style={{ backgroundColor: "#163cac" }}
             >
@@ -70,9 +70,9 @@ import { Target } from "lucide-react";
           </div>
           {/* Halo sutil */}
           <div className="pointer-events-none absolute inset-0 -z-10 blur-3xl opacity-20"
-               style={{ background: "radial-gradient(600px circle at 80% 30%, #163cac33, transparent 40%)" }} />
-        </motion.div>
-      </div>
+                style={{ background: "radial-gradient(600px circle at 80% 30%, #163cac33, transparent 40%)" }} />
+          </motion.div>
+        </div>
     </section>
   );
 }
