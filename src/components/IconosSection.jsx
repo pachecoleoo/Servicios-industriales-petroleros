@@ -5,8 +5,12 @@ function IconosSection() {
 
         {/* Encabezado */}
         <div className="text-center max-w-2xl mx-auto">
-          <p className="text-xs font-semibold tracking-[0.2em] text-[#163cac] uppercase">
-            Beneficios
+          <p className="text-xs font-semibold tracking-[0.2em] text-[#163cac] ">
+           
+            <span className="inline-block rounded-full border px-3 py-1 text-xs font-semibold tracking-wide text-gray-600">
+                Beneficios          
+                </span>
+           
           </p>
           <h2 className="mt-2 text-3xl md:text-4xl font-extrabold text-slate-900">
             Todos los beneficios de nuestro servicio

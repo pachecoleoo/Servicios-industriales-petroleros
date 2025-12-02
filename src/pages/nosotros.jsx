@@ -1,11 +1,22 @@
+import bannerNosotros from "../assets/bannerNostros.jpg";
+
+
 function Nosotros() {
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
       <main className="flex-1">
 
         {/* HERO / INTRO */}
-        <section className="bg-[#0b1220] py-12 text-white">
-          <div className="mx-auto max-w-7xl px-6">
+        
+       <section
+       className="relative py-16 text-white bg-cover bg-center"
+      style={{ backgroundImage: `url(${bannerNosotros})` }}
+        >
+      {/* Capa oscura encima para mejor contraste */}
+        <div className="absolute inset-0 bg-black/60"></div>
+
+            {/* Contenido */}
+            <div className="relative mx-auto max-w-7xl px-6">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-300">
               Sobre nosotros
             </p>
@@ -14,7 +25,7 @@ function Nosotros() {
               Somos un equipo especializado en servicios industriales.
             </h1>
 
-            <p className="mt-4 max-w-2xl text-sm md:text-base text-slate-300">
+            <p className="mt-4 max-w-2xl text-sm md:text-base text-slate-100">
               Acompañamos a nuestros clientes asegurando mediciones confiables, equipamiento
               calibrado y un soporte técnico.
             </p>
@@ -29,7 +40,7 @@ function Nosotros() {
                 ¿Quiénes somos?
               </h2>
 
-              <p className="mt-3 text-xl leading-relaxed text-slate-900">
+              <p className="mt-3 text-base leading-relaxed text-slate-900">
                 Nacida en el corazón del valle de Neuquén y Río Negro, 
                 somos una empresa de servicios industriales enfocada en el sector petrolero,
                 con fuerte presencia en la región. 
@@ -88,35 +99,7 @@ function Nosotros() {
 
         {/* VALORES */}
         <section className="py-10">
-          {/* <div className="mx-auto max-w-7xl px-6">
-            <h2 className="text-2xl font-semibold text-slate-900">Nuestros valores</h2>
 
-            <div className="mt-4 grid gap-4 md:grid-cols-3">
-              <div>
-                <h3 className="text-sm font-semibold text-slate-900">Responsabilidad</h3>
-                <p className="mt-2 text-sm text-slate-700">
-                  Cada servicio se realiza con foco en la seguridad, el cuidado de las personas
-                  y del entorno, cumpliendo procedimientos y estándares exigidos.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-sm font-semibold text-slate-900">Transparencia</h3>
-                <p className="mt-2 text-sm text-slate-700">
-                  Información clara y trazable, con documentación disponible para auditorías,
-                  controles internos y seguimiento técnico.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-sm font-semibold text-slate-900">Compromiso</h3>
-                <p className="mt-2 text-sm text-slate-700">
-                  Nos involucramos en la operación, entendemos el contexto y proponemos
-                  soluciones técnicas que aportan valor real.
-                </p>
-              </div>
-            </div>
-          </div>   */}
 
            {/* CTA */}
           <div className="mx-auto max-w-7xl px-6">

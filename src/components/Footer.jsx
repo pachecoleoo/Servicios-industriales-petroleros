@@ -1,5 +1,6 @@
 // src/components/Footer.jsx
 import { Mail, Phone, MapPin, Linkedin, Instagram } from "lucide-react";
+import logo from "../assets/logosinletras.png";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -15,15 +16,13 @@ export default function Footer() {
           {/* Marca / Descripción */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-3">
-              {/* Logo: reemplazá por <img src="/logo.png" .../> si ya lo tenés */}
-              <div
-                className="h-10 w-10 rounded-lg"
-                style={{ backgroundColor: "#163cac" }}
-                aria-hidden
-              />
-              <h3 className="text-xl font-semibold text-white">SIP</h3>
-            </div>
-            <p className="mt-4 text-sm leading-relaxed text-gray-400">
+
+               <img
+                       src={logo}
+                      alt="Logo"
+                      className="h-[60px] w-[110px] object-contain"                        />            
+                       </div>
+            <p className="mt-0 text-sm leading-relaxed text-gray-400">
               Servicios Industriales Petroleros. Calibración certificada, soporte en campo
               y trazabilidad para operaciones seguras y eficientes.
             </p>
@@ -32,12 +31,11 @@ export default function Footer() {
           {/* Enlaces rápidos */}
           <div>
             <h4 className="text-sm font-semibold tracking-wide text-white">Enlaces</h4>
-            <ul className="mt-4 space-y-3 text-sm">
-              <li><a className="hover:text-white transition-colors" href="/">Inicio</a></li>
-              <li><a className="hover:text-white transition-colors" href="/servicios">Servicios</a></li>
-              <li><a className="hover:text-white transition-colors" href="/nosotros">Nosotros</a></li>
-              {/* <li><a className="hover:text-white transition-colors" href="#">Calidad & Certificados</a></li> */}
-              <li><a className="hover:text-white transition-colors" href="/contacto">Contacto</a></li>
+            <ul className="mt-2 space-y-3 text-sm">
+              <li><a className="hover:text-white transition-colors mt-0" href="/">Inicio</a></li>
+              <li><a className="hover:text-white transition-colors mt-0" href="/servicios">Servicios</a></li>
+              <li><a className="hover:text-white transition-colors mt-0" href="/nosotros">Nosotros</a></li>
+              <li><a className="hover:text-white transition-colors mt-0" href="/contacto">Contacto</a></li>
             </ul>
           </div>
 
@@ -64,19 +62,20 @@ export default function Footer() {
             </ul>
             {/* Redes */}
             <div className="mt-5 flex items-center gap-4">
-
-<a
-  href="https://w.app/serviciospetroleros"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="WhatsApp"
-  className="rounded-md p-2 ring-1 ring-white/10 hover:bg-white/5"
->
+      {/* link WhatsApp */}
+    <a
+      href="https://w.app/serviciospetroleros"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="WhatsApp"
+      className="rounded-md p-2 ring-1 ring-white/10 hover:bg-white/5"
+      >
                 <Phone className="h-5 w-5" />
               </a>
               <a href="#" aria-label="Instagram" className="rounded-md p-2 ring-1 ring-white/10 hover:bg-white/5">
                 <Instagram className="h-5 w-5" />
               </a>
+              <br /><br />
             </div>
           </div>
 

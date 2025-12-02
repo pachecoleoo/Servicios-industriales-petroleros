@@ -1,17 +1,27 @@
 // src/pages/Servicios.jsx
+import bannerServicios from "../assets/bannerServicios.jpeg";
 
 function Servicios() {
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
       <main className="flex-1">
         {/* HERO / INTRO – mismo estilo que Nosotros */}
-        <section className="bg-[#0b1220] py-12 text-white">
-          <div className="mx-auto max-w-7xl px-6">
+
+        
+        <section
+              className="relative py-16 text-white bg-cover bg-center"
+             style={{ backgroundImage: `url(${bannerServicios})` }}
+               >
+             {/* Capa oscura encima para mejor contraste */}
+               <div className="absolute inset-0 bg-black/60"></div>
+       
+                   {/* Contenido */}
+            <div className="relative mx-auto max-w-7xl px-6">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-300">
               Servicios
             </p>
             <h1 className="mt-3 text-3xl font-semibold md:text-4xl">
-               Calibramos equipos medidores de gas.
+               Calibramos equipos medidores de gas
             </h1>
             
             <p className="mt-4 max-w-2xl text-sm md:text-base text-slate-300">
@@ -32,7 +42,7 @@ function Servicios() {
         ¿Qué tipo de servicios ofrecemos?
       </h2>
 
-      <p className="mt-3 max-w-3xl  text-xl leading-relaxed text-slate-800">
+      <p className="mt-3 max-w-3xl  text-base leading-relaxed text-slate-800">
         Brindamos un servicio de calibración de detectores de gas de la más alta calidad.
         Nuestra amplia experiencia y conocimientos en detectores de gas nos permiten
         brindar un servicio de calibración preciso y confiable para una amplia gama
@@ -61,7 +71,7 @@ function Servicios() {
        <h2 className="text-3xl font-semibold text-slate-900">
         ¿Por qué calibrar tus detectores con nosotros?
       </h2>
-      <p className="mt-6 text-xl text-slate-600">
+      <p className="mt-6 text-base text-slate-600">
          Trabajamos con procedimientos estandarizados, equipos certificados
         y trazabilidad documental completa. Nuestro objetivo es garantizar 
         que cada detector funcione con precisión, sea confiable en campo y 

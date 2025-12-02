@@ -1,22 +1,23 @@
 // src/components/ContactForm.jsx
-import { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 
 export default function ContactForm() {
-  const [form, setForm] = useState({
-    nombre: "",
-    email: "",
-    mensaje: "",
-  });
+  const [state, handleSubmit] = useForm("mzzngzrr"); // 👈 tu ID de Formspree
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Datos enviados:", form);
-    alert("Formulario enviado ✅ (acá iría tu lógica de backend o email)");
-  };
+  if (state.succeeded) {
+    return (
+      <section id="contacto">
+        <div className="mx-auto max-w-3xl px-6 py-16">
+          <h2 className="text-3xl font-extrabold text-gray-900">
+            ¡Gracias por contactarnos!
+          </h2>
+          <p className="mt-2 text-gray-600">
+            Recibimos tu mensaje y te vamos a responder a la brevedad.
+          </p>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="contacto">
@@ -44,9 +45,23 @@ export default function ContactForm() {
               type="text"
               id="nombre"
               name="nombre"
-              value={form.nombre}
-              onChange={handleChange}
               required
+              className="mt-1 w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-[#163cac] focus:ring-[#163cac]"
+            />
+          </div>
+
+          {/* Empresa */}
+          <div>
+            <label
+              htmlFor="empresa"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Empresa
+            </label>
+            <input
+              type="text"
+              id="empresa"
+              name="empresa"
               className="mt-1 w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-[#163cac] focus:ring-[#163cac]"
             />
           </div>
@@ -63,10 +78,13 @@ export default function ContactForm() {
               type="email"
               id="email"
               name="email"
-              value={form.email}
-              onChange={handleChange}
               required
               className="mt-1 w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-[#163cac] focus:ring-[#163cac]"
+            />
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
             />
           </div>
 
@@ -82,21 +100,25 @@ export default function ContactForm() {
               id="mensaje"
               name="mensaje"
               rows="5"
-              value={form.mensaje}
-              onChange={handleChange}
               required
               className="mt-1 w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-[#163cac] focus:ring-[#163cac]"
             ></textarea>
+            <ValidationError
+              prefix="Mensaje"
+              field="mensaje"
+              errors={state.errors}
+            />
           </div>
 
           {/* Botón */}
           <div className="text-center">
             <button
               type="submit"
-              className="w-full rounded-lg px-6 py-3 font-medium text-white shadow-md transition"
+              disabled={state.submitting}
+              className="w-full rounded-lg px-6 py-3 font-medium text-white shadow-md transition disabled:opacity-70 disabled:cursor-not-allowed"
               style={{ backgroundColor: "#163cac" }}
             >
-              Enviar mensaje
+              {state.submitting ? "Enviando..." : "Enviar mensaje"}
             </button>
           </div>
         </form>

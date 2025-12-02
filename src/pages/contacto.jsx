@@ -1,4 +1,5 @@
 import ContactForm from "../components/ContactForm";
+import bannerContacto from "../assets/bannerContacto.jpg"
 
 function Contacto() {
   return (
@@ -7,8 +8,15 @@ function Contacto() {
       <main className="flex-1">
 
         {/* HERO */}
-        <section className="bg-[#0b1220] py-12 text-white">
-          <div className="mx-auto max-w-7xl px-6">
+      <section
+             className="relative py-16 text-white bg-cover bg-center"
+            style={{ backgroundImage: `url(${bannerContacto})` }}
+              >
+            {/* Capa oscura encima para mejor contraste */}
+              <div className="absolute inset-0 bg-black/60"></div>
+      
+                  {/* Contenido */}
+                  <div className="relative mx-auto max-w-7xl px-6">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-300">
               Contactanos
             </p>
