@@ -15,9 +15,6 @@ function Home() {
       <ObjectiveSection/>
       <IconosSection/>
       <IntroThreeColumns/>
-    
-
-    
     </main>
     </div>
   );

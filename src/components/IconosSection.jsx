@@ -1,6 +1,14 @@
+import icono1 from "../assets/servicio2.png";
+import icono2 from "../assets/economia.png";
+import icono3 from "../assets/soporte.png";
+import icono4 from "../assets/productividad.png";
+
+
+
 function IconosSection() {
   return (
-    <section className="py-16 bg-white">
+    // <section className="py-15 bg-slate-50">
+    <section className="py-16 bg-slate-50">
       <div className="mx-auto max-w-5xl px-6">
 
         {/* Encabezado */}
@@ -26,13 +34,9 @@ function IconosSection() {
 
           {/* Ítem 1 */}
           <div className="flex flex-col items-center text-center max-w-xs">
-            <img
-              src="/src/assets/check.png"
-              alt="Beneficio"
-              className="h-16 w-16 mb-4 drop-shadow-lg"
-            />
+            <img src={icono1} alt="Servicio"   className="h-16 w-16 mb-4 drop-shadow-lg"/>
             <p className="text-sm font-semibold text-slate-900">
-              Autoservicio
+              Al servicios
             </p>
             <p className="mt-1 text-sm text-slate-600">
               Texto breve explicando el beneficio.
@@ -41,11 +45,7 @@ function IconosSection() {
 
           {/* Ítem 2 */}
           <div className="flex flex-col items-center text-center max-w-xs">
-            <img
-              src="/src/assets/check.png"
-              alt="Beneficio"
-              className="h-16 w-16 mb-4 drop-shadow-lg"
-            />
+             <img src={icono2} alt="Servicio"   className="h-16 w-16 mb-4 drop-shadow-lg"/>
             <p className="text-sm font-semibold text-slate-900">
               Economía de consumo
             </p>
@@ -56,13 +56,9 @@ function IconosSection() {
 
           {/* Ítem 3 */}
           <div className="flex flex-col items-center text-center max-w-xs">
-            <img
-              src="/src/assets/check.png"
-              alt="Beneficio"
-              className="h-16 w-16 mb-4 drop-shadow-lg"
-            />
+             <img src={icono3} alt="Servicio"   className="h-16 w-16 mb-4 drop-shadow-lg"/>
             <p className="text-sm font-semibold text-slate-900">
-              Gerenciamiento
+              Soporte
             </p>
             <p className="mt-1 text-sm text-slate-600">
               Información clara para decisiones operativas.
@@ -71,11 +67,7 @@ function IconosSection() {
 
           {/* Ítem 4 */}
           <div className="flex flex-col items-center text-center max-w-xs">
-            <img
-              src="/src/assets/check.png"
-              alt="Beneficio"
-              className="h-16 w-16 mb-4 drop-shadow-lg"
-            />
+             <img src={icono4} alt="Servicio"   className="h-16 w-16 mb-4 drop-shadow-lg"/>
             <p className="text-sm font-semibold text-slate-900">
               Productividad
             </p>

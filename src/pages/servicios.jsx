@@ -65,7 +65,7 @@ function Servicios() {
 </section>
 
         {/* BLOQUE 2 – Detalle por áreas */}
-      <section className="py-12 bg-slate-50">
+      <section className="py-15 bg-slate-50">
   <div className="mx-auto max-w-7xl px-6">
     <div className="max-w-8xl">
        <h2 className="text-3xl font-semibold text-slate-900">
