@@ -88,7 +88,7 @@ function Servicios() {
           <img
               src="/src/assets/check.png"
             alt=""
-            className="h-10 w-10 object-contain"
+            className="h-9 w-9 object-contain"
           />
         </p>
         <p className="mt-3 text-base text-slate-800 leading-relaxed">
@@ -100,13 +100,12 @@ function Servicios() {
 
       {/* Card 2 */}
       <div className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200">
-        <p className="flex items-center gap-10 text-xl font-semibold  tracking-wide text-[#2182a0]">
-        
+        <p className="flex items-center gap-0 text-xl font-semibold  tracking-wide text-[#2182a0]">  
           <span >Mantenimiento e instrumentación</span> 
             <img
               src="/src/assets/check.png"
             alt=""
-            className="h-10 w-10 object-contain"
+            className="h-9 w-9 object-contain"
           />
         </p>
         <p className="mt-3 text-base text-slate-800 leading-relaxed">
@@ -124,7 +123,7 @@ function Servicios() {
            <img
               src="/src/assets/check.png"
             alt=""
-            className="h-10 w-10 object-contain"
+            className="h-9 w-9 object-contain"
           />
         </p>
         <p className="mt-3 text-base text-slate-800 leading-relaxed">

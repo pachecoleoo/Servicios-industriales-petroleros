@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from "react";
+
 export default function IntroThreeColumns() {
   const items = [
     {
@@ -17,12 +19,38 @@ export default function IntroThreeColumns() {
     },
   ];
 
+  const sectionRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  // delays válidos para Tailwind
+  const delays = ["delay-0", "delay-150", "delay-300"];
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect(); // solo la primera vez
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="w-full bg-white">
+    <section ref={sectionRef} className="w-full bg-white">
       {/* Contenedor principal */}
       <div className="mx-auto max-w-7xl px-6 py-14">
         {/* Encabezado de sección */}
-        <div className="mx-auto max-w-3xl text-center">
+        <div
+          className={`mx-auto max-w-3xl text-center transition-all duration-700 ${
+            visible ? "fade-up" : "opacity-0"
+          }`}
+        >
           <span className="inline-block rounded-full border px-3 py-1 text-xs font-semibold tracking-wide text-gray-600">
             ¿Por qué elegirnos?
           </span>
@@ -33,16 +61,19 @@ export default function IntroThreeColumns() {
             La calibración de detectores de gas es esencial para garantizar la seguridad de tu entorno y la precisión de las mediciones.
           </p>
         </div>
+
         {/* Grid de 3 columnas */}
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {items.map((item, i) => (
             <article
               key={i}
-              className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              className={`group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-700 ${visible ? "fade-up" : "opacity-0"} ${delays[i]}`}
             >
               {/* Acento superior */}
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-1 opacity-80" 
-              style={{ backgroundColor: "#163cac" }}></div>
+              <div
+                className="pointer-events-none absolute inset-x-0 top-0 h-1 opacity-80"
+                style={{ backgroundColor: "#163cac" }}
+              ></div>
 
               {/* Contenido */}
               <h3 className="mt-2 text-xl font-semibold text-gray-900">
@@ -71,4 +102,3 @@ export default function IntroThreeColumns() {
     </section>
   );
 }
-

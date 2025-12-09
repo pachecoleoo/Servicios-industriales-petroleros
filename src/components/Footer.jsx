@@ -6,7 +6,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="absolut bg-[#0b1220] text-gray-300">
+    <footer className="absolut  bg-slate-900 text-gray-300">
       {/* Acento superior con tu color */}
       <div className="absolute inset-x-0 -top-1 h-1" style={{ backgroundColor: "#163cac" }} />
 

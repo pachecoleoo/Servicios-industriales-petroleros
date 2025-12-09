@@ -15,23 +15,17 @@ import { Target } from "lucide-react";
           className="relative"
         >
           {/* Acento superior en tu color */}
-          <div
-            className="absolute -top-4 left-0 h-1 w-24 rounded-full"
-            style={{ backgroundColor: "#163cac" }}
-            aria-hidden
-          />
-          <div className="flex items-center gap-3">
-            <div
-              className="flex h-10 w-10 items-center justify-center rounded-xl text-white"
-              style={{ backgroundColor: "#163cac" }}
-            >
-              <Target className="h-5 w-5" />
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Nuestro servicio
-            </h2>
-          </div>
+          
+<div className="relative pb-4">
+  <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+    Nuestro servicio
+  </h2>
 
+  <div
+    className="absolute left-0 bottom-0 h-[3px] w-32 rounded-full"
+    style={{ backgroundColor: "#163cac" }}
+  />
+</div>
           <p className="mt-5 text-base text-gray-900 leading-relaxed">
             Asegurar precisión, trazabilidad y eficiencia en cada intervención.
             Integramos tecnología, método y experiencia para que tus operaciones
