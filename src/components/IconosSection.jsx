@@ -54,7 +54,7 @@ function IconosSection() {
         <div className="mt-14 grid gap-12 grid-cols-1 md:grid-cols-2 place-items-center">
           
           {[ 
-            { icon: icono1, title: "Al servicios", text: "Texto breve explicando el beneficio." },
+            { icon: icono1, title: "Calibración ", text: "Diagnóstico y pruebas de funcionamiento." },
             { icon: icono2, title: "Economía de consumo", text: "Equipos calibrados que reducen errores." },
             { icon: icono3, title: "Soporte", text: "Información clara para decisiones operativas." },
             { icon: icono4, title: "Productividad", text: "Menos paradas y más rendimiento." }

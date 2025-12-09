@@ -44,7 +44,7 @@ function Contacto() {
       <div className="md:col-span-3">
         <h2 className="text-3xl font-extrabold text-gray-900">Nuestra Ubicación </h2>
         <p className="mt-2 text-gray-600">
-Seaz Peña 102, Cipolletti, Río Negro, Argentina        </p>
+Saenz Peña 102, Cipolletti, Río Negro, Argentina        </p>
       </div>
 
       {/* 📬 Espacio reservado para el título del formulario */}

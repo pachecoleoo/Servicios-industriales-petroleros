@@ -1,6 +1,6 @@
 // src/pages/Servicios.jsx
 import bannerServicios from "../assets/bannerServicios.jpeg";
-
+import CallToAction from "../components/CallToAction";
 function Servicios() {
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
@@ -134,30 +134,9 @@ function Servicios() {
     </div>
   </div>
 </section>
-
-        {/* BLOQUE 3 – Mini CTA hacia contacto */}
         <section className="py-10 bg-white">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="flex flex-col gap-3 rounded-xl bg-[#0b1220] px-6 py-5 text-white md:flex-row md:items-center md:justify-between">
-              <div>
-                <p className="text-sm font-semibold">
-                  ¿Necesitás un servicio específico de calibración o soporte en campo?
-                </p>
-                <p className="text-xs text-slate-300">
-                  Contanos el tipo de instalación, los equipos involucrados y el
-                  plazo, y armamos una propuesta técnica a medida.
-                </p>
-              </div>
-              <a
-                href="/contacto"
-                className="inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-white shadow-sm"
-                style={{ backgroundColor: "#163cac" }}
-              >
-                Coordinar un servicio
-              </a>
-            </div>
-          </div>
-        </section>
+            <CallToAction></CallToAction>
+        </section> 
       </main>
     </div>
   );

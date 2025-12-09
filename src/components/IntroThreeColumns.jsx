@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function IntroThreeColumns() {
   const items = [
@@ -84,15 +85,21 @@ export default function IntroThreeColumns() {
               </p>
 
               {/* CTA sutil */}
-              <div className="mt-6">
-                <button
-                  type="button"
-                  className="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-800 transition-colors duration-200 hover:border-blue-600 hover:text-blue-700"
-                >
-                  Ver más
-                </button>
-              </div>
-
+           <div className="mt-6">
+        <Link to="/servicios">
+         <button
+        type="button"
+            className="
+        rounded-lg border border-gray-300 
+        px-4 py-2 text-sm font-medium 
+        text-gray-800 transition-colors duration-200 
+        hover:border-blue-600 hover:text-blue-700
+      "
+          >
+         Ver más
+        </button>
+         </Link>
+          </div>
               {/* Halo decorativo al hover */}
               <div className="pointer-events-none absolute -inset-8 -z-10 rounded-[2rem] bg-gradient-to-r from-blue-100 to-cyan-100 opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-60"></div>
             </article>

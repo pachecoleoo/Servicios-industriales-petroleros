@@ -6,36 +6,48 @@ const slides = [
   {
     image: "/images/1.png",
     title: "Tu industria calibrada al milímetro",
-    desc: "Seguridad y eficiencia en cada operación."
+    desc: "Seguridad y eficiencia en cada operación.",
   },
   {
     image: "/images/2.png",
-    title: "Medir con precision, operar con confianza",
-    desc: "Comprometidos con procesos seguros y productivos."
+    title: "Medir con precisión, operar con confianza",
+    desc: "Comprometidos con procesos seguros y productivos.",
   },
   {
     image: "/images/3.png",
     title: "Tecnología que valida tu eficiencia",
-    desc: "Trabajamos para un futuro responsable y sostenible."
+    desc: "Trabajamos para un futuro responsable y sostenible.",
   },
 ];
 
-// 🟦 Hook para efecto typing
+// 🟦 Hook para efecto typing SOLO PARA EL TÍTULO
 function useTypingEffect(text, speed = 40) {
   const [displayed, setDisplayed] = useState("");
 
   useEffect(() => {
-    setDisplayed(""); // resetear al cambiar texto
-    let i = -1;
+    setDisplayed("");
+    if (!text) return;
 
-    const interval = setInterval(() => {
+    let i = -1;
+    let cancelled = false;
+
+    function typeNext() {
+      if (cancelled) return;
+
       setDisplayed((prev) => prev + text.charAt(i));
       i++;
-      if (i >= text.length) clearInterval(interval);
-    }, speed);
 
-    return () => clearInterval(interval);
-  }, [text]);
+      if (i < text.length) {
+        setTimeout(typeNext, speed);
+      }
+    }
+
+    typeNext();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [text, speed]);
 
   return displayed;
 }
@@ -43,12 +55,12 @@ function useTypingEffect(text, speed = 40) {
 export default function CarouselLanding() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const typedTitle = useTypingEffect(slides[currentSlide].title);
-  const typedDesc = useTypingEffect(slides[currentSlide].desc, 20);
+  // 🔹 SOLO tipiado en el título
+  const typedTitle = useTypingEffect(slides[currentSlide].title, 40);
+  const currentDesc = slides[currentSlide].desc;
 
   return (
     <div className="w-full overflow-hidden relative">
-
       <Carousel
         autoPlay
         infiniteLoop
@@ -58,9 +70,7 @@ export default function CarouselLanding() {
         showArrows
         stopOnHover={false}
         dynamicHeight={false}
-        onChange={(index) => setCurrentSlide(index)} // 🔥 detecta cambio de slide
-        
-       // 🔽 Indicadores en forma de rayitas _ _ _
+        onChange={(index) => setCurrentSlide(index)}
         renderIndicator={(onClickHandler, isSelected, index, label) => {
           const baseClasses =
             "mx-1 h-[3px] w-10 rounded-full transition-all duration-300";
@@ -90,14 +100,15 @@ export default function CarouselLanding() {
         ))}
       </Carousel>
 
-      {/* 🔥 Overlay con texto centrado (como en tu imagen) */}
+      {/* Overlay con texto centrado */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-white bg-black/30 px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-center drop-shadow-lg">
           {typedTitle}
         </h2>
 
+        {/* 🔹 Subtítulo SIN typing, fijo */}
         <p className="text-lg md:text-xl mt-2 text-center drop-shadow-lg">
-          {typedDesc}
+          {currentDesc}
         </p>
       </div>
     </div>

@@ -1,6 +1,7 @@
 // src/components/Footer.jsx
 import { Mail, Phone, MapPin, Linkedin, Instagram } from "lucide-react";
 import logo from "../assets/logosinletras.png";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -32,10 +33,10 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold tracking-wide text-white">Enlaces</h4>
             <ul className="mt-2 space-y-3 text-sm">
-              <li><a className="hover:text-white transition-colors mt-0" href="/">Inicio</a></li>
-              <li><a className="hover:text-white transition-colors mt-0" href="/servicios">Servicios</a></li>
-              <li><a className="hover:text-white transition-colors mt-0" href="/nosotros">Nosotros</a></li>
-              <li><a className="hover:text-white transition-colors mt-0" href="/contacto">Contacto</a></li>
+              <li><Link className="hover:text-white transition-colors mt-0" to="/">Inicio</Link></li>
+              <li><Link className="hover:text-white transition-colors mt-0" to="/servicios">Servicios</Link></li>
+              <li><Link className="hover:text-white transition-colors mt-0" to="/nosotros">Nosotros</Link></li>
+              <li><Link className="hover:text-white transition-colors mt-0" to="/contacto">Contacto</Link></li>
             </ul>
           </div>
 
@@ -45,26 +46,32 @@ export default function Footer() {
             <ul className="mt-4 space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <Phone className="mt-0.5 h-4 w-4 text-gray-400" />
-                <a target="_blank" href="https://w.app/serviciospetroleros" className="hover:text-white transition-colors">
+                <a target="_blank" href="https://wa.link/jpc1ep" className="hover:text-white transition-colors">
                   +54 9 299 469 9960
                 </a>
               </li>
               <li className="flex items-start gap-2">
-                <Mail className="mt-0.5 h-4 w-4 text-gray-400" />
-                <a href="mailto:contacto@sip.com" className="hover:text-white transition-colors">
-                  info@sip.ar
-                </a>
-              </li>
+            <Mail className="mt-0.5 h-4 w-4 text-gray-400" />
+  
+      <a
+  href="https://mail.google.com/mail/?view=cm&to=info@sip.ar"
+  target="_blank"
+  rel="noreferrer"
+  className="hover:text-white transition-colors"
+>
+  info@sip.ar
+</a>
+        </li>
               <li className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 text-gray-400" />
-                <a target="_blank" href="https://share.google/bGd6KfUYFt5HAyjTN"className="hover:text-white transition-colors">Seaz Peña 102, Cipolletti, Río Negro, Argentina</a>
+                <a target="_blank" href="https://share.google/bGd6KfUYFt5HAyjTN"className="hover:text-white transition-colors">Saenz Peña 102, Cipolletti, Río Negro, Argentina</a>
               </li>
             </ul>
             {/* Redes */}
             <div className="mt-5 flex items-center gap-4">
       {/* link WhatsApp */}
     <a
-      href="https://w.app/serviciospetroleros"
+      href="https://wa.link/jpc1ep"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="WhatsApp"
@@ -86,7 +93,7 @@ export default function Footer() {
               Contanos tu necesidad de calibración o servicio en campo.
             </p>
             <a
-              href="https://w.app/serviciospetroleros"
+      href="https://wa.link/jpc1ep"
               className="mt-4 inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-white shadow-sm"
               style={{ backgroundColor: "#163cac" }}
             >

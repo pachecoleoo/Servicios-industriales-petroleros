@@ -1,6 +1,7 @@
 // src/components/ObjectiveSection.jsx
 import { motion } from "framer-motion";
 import { Target } from "lucide-react";
+import { Link } from "react-router-dom";
 
  function ObjectiveSection() {
   return (
@@ -37,13 +38,13 @@ import { Target } from "lucide-react";
           </p>
 
           <div className="mt-6">
-            <a
-              href="../servicios"
+            <Link
+              to="../servicios"
               className="inline-flex items-center rounded-lg px-4 py-2 text-white shadow-sm"
               style={{ backgroundColor: "#163cac" }}
             >
               Conocer más
-            </a>
+            </Link>
           </div>
         </motion.div>
 

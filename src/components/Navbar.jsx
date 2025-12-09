@@ -19,7 +19,7 @@ export default function Navbar() {
     <div className="relative">
 
       {/* NAV DESKTOP */}
-      <nav className="hidden md:flex items-center gap-8">
+      <nav className="hidden  md:flex items-center gap-8">
         {links.map((link) => {
           const isActive =
             link.to === "/"
@@ -60,7 +60,7 @@ export default function Navbar() {
 
       {/* MENU MOBILE (solo se despliega) */}
       {open && (
-        <div className="absolute right-0 mt-3 w-40 bg-[#0b1220] rounded-lg shadow-lg py-3 flex flex-col gap-3 md:hidden z-30">
+        <div className="absolute  right-0 mt-3 w-40 bg-[#0b1220] rounded-lg shadow-lg py-3 flex flex-col gap-3 md:hidden z-30">
           {links.map((link) => {
             const isActive =
               link.to === "/"

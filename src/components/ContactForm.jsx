@@ -62,6 +62,7 @@ export default function ContactForm() {
               type="text"
               id="empresa"
               name="empresa"
+              required
               className="mt-1 w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-[#163cac] focus:ring-[#163cac]"
             />
           </div>
