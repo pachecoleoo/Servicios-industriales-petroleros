@@ -1,6 +1,8 @@
 // src/pages/Servicios.jsx
 import bannerServicios from "../assets/bannerServicios.jpeg";
 import CallToAction from "../components/CallToAction";
+import servicios from "../assets/servicio.png"
+import tilde from "../assets/check.png"
 function Servicios() {
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
@@ -54,7 +56,7 @@ function Servicios() {
     {/* COLUMNA DERECHA – Imagen */}
     <div className="flex justify-center">
       <img
-        src="/src/assets/servicio.png"
+       src={servicios}
         alt="Icono de calibración"
           className="
       w-40 md:w-52"
@@ -86,7 +88,7 @@ function Servicios() {
           
           <span>Calibración y verificación</span>
           <img
-              src="/src/assets/check.png"
+       src={tilde}
             alt=""
             className="h-9 w-9 object-contain"
           />
@@ -103,7 +105,7 @@ function Servicios() {
         <p className="flex items-center gap-0 text-xl font-semibold  tracking-wide text-[#2182a0]">  
           <span >Mantenimiento e instrumentación</span> 
             <img
-              src="/src/assets/check.png"
+       src={tilde}
             alt=""
             className="h-9 w-9 object-contain"
           />
@@ -121,7 +123,7 @@ function Servicios() {
            
           <span>Diagnóstico y trazabilidad</span>
            <img
-              src="/src/assets/check.png"
+       src={tilde}
             alt=""
             className="h-9 w-9 object-contain"
           />

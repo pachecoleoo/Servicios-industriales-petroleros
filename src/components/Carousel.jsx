@@ -20,7 +20,7 @@ const slides = [
   },
 ];
 
-// 🟦 Hook para efecto typing SOLO PARA EL TÍTULO
+// 🟦 Hook para efecto typing (solo título)
 function useTypingEffect(text, speed = 40) {
   const [displayed, setDisplayed] = useState("");
 
@@ -28,25 +28,17 @@ function useTypingEffect(text, speed = 40) {
     setDisplayed("");
     if (!text) return;
 
-    let i = -1;
-    let cancelled = false;
-
-    function typeNext() {
-      if (cancelled) return;
-
-      setDisplayed((prev) => prev + text.charAt(i));
+    let i = 0;
+    const id = setInterval(() => {
       i++;
+      setDisplayed(text.slice(0, i));
 
-      if (i < text.length) {
-        setTimeout(typeNext, speed);
+      if (i >= text.length) {
+        clearInterval(id);
       }
-    }
+    }, speed);
 
-    typeNext();
-
-    return () => {
-      cancelled = true;
-    };
+    return () => clearInterval(id);
   }, [text, speed]);
 
   return displayed;
@@ -55,7 +47,6 @@ function useTypingEffect(text, speed = 40) {
 export default function CarouselLanding() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // 🔹 SOLO tipiado en el título
   const typedTitle = useTypingEffect(slides[currentSlide].title, 40);
   const currentDesc = slides[currentSlide].desc;
 
@@ -106,7 +97,7 @@ export default function CarouselLanding() {
           {typedTitle}
         </h2>
 
-        {/* 🔹 Subtítulo SIN typing, fijo */}
+        {/* Subtítulo fijo, sin typing */}
         <p className="text-lg md:text-xl mt-2 text-center drop-shadow-lg">
           {currentDesc}
         </p>

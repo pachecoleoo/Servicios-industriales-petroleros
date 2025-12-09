@@ -21,7 +21,7 @@ export default function Footer() {
                <img
                        src={logo}
                       alt="Logo"
-                      className="h-[60px] w-[110px] object-contain"                        />            
+                      className="ml-[-20px] h-[60px] w-[110px] object-contain"                        />            
                        </div>
             <p className="mt-0 text-sm leading-relaxed text-gray-400">
               Servicios Industriales Petroleros. Calibración certificada, soporte en campo
