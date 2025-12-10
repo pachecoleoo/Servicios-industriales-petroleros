@@ -1,4 +1,4 @@
-import logo from "../assets/logosinletras.png";
+import logo from "../assets/logoconletras.png";
 import { useLocation, Link } from "react-router-dom";
 import Navbar from "./Navbar";
 
@@ -45,6 +45,7 @@ export default function Header(){
               text-sm font-medium text-gray-700
               text-left
               md:text-left md:text-xl
+              hidden md:block
             "
           >
             Tu industria a nuestro servicio
